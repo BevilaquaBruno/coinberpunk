@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currency Checker</title>
+  <link rel="stylesheet" href="flexboxgrid.min.css">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <h1>Coinberpunk 69-420</h1>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 text-center">
+      <div>
+        <img id="btc_image" src="spinner.svg" alt="loading...">
+        <div>
+          <h4>Bitcoin(BTC)</h4>
+          <div id="btc_value" class= row text-center">
+            <div class="col-sm-2"><img class="middle no-border" src="pacman.svg" alt="loading..."></div>
+            <div class="col-sm-10 no-margin no-padding">Getting the value with Elon Musk...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4 text-center">
+      <div>
+        <img id="eth_image" src="spinner.svg" alt="Card example image">
+        <div>
+          <h4>Ethereum(ETH)</h4>
+          <div id="eth_value" class="card-text row text-center">
+            <div class="col-sm-10 no-margin no-padding">Getting the value with Jeff Bezos...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4 text-center">
+      <div>
+        <img id="xrp_image" src="spinner.svg" alt="Card example image">
+        <div>
+          <h4>Ripple(XRP)</h4>
+          <div id="xrp_value" class="card-text row text-center">
+            <div class="col-sm-10 no-margin no-padding">Getting the value with Véio da Havan...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <button onclick="main();" class="cybr-btn">
+        Update<span aria-hidden>_</span>
+        <span aria-hidden class="cybr-btn__glitch">Update_</span>
+        <span aria-hidden class="cybr-btn__tag">coin</span>
+      </button>
+    </div>
+  </div>
+  <script defer src="axios.min.js"></script>
+  <script defer src="main.js"></script>
+</body>
+</html>
