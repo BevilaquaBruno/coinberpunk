@@ -1,6 +1,6 @@
 "use strict";
 function main() {
-  let html = "<div class=\"col-sm-10 no-margin no-padding\">Getting the value with Véio da Havan...</div>";
+  let html = "<div class=\"col-sm-10 no-margin no-padding\">Retrieving data from Véio da Havan...</div>";
     document.getElementById('btc_value').innerHTML = html;
     document.getElementById('eth_value').innerHTML = html;
     document.getElementById('xrp_value').innerHTML = html;
