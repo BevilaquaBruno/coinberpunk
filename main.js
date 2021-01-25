@@ -1,23 +1,29 @@
 "use strict";
 function main() {
-  /*let html = "<div class=\"col-sm-10 no-margin no-padding\">Retrieving data from Véio da Havan...</div>";
-    document.getElementById('btc_value').innerHTML = html;
-    document.getElementById('eth_value').innerHTML = html;
-    document.getElementById('xrp_value').innerHTML = html;
-    
-    document.getElementById('btc_image').setAttribute('src',"spinner.svg");
-    document.getElementById('eth_image').setAttribute('src',"spinner.svg");
-    document.getElementById('xrp_image').setAttribute('src',"spinner.svg");*/
-  axios({url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&ids=bitcoin,ethereum,ripple" })
-    .then(function (res) {
-      const coins = res.data;
-      coins.forEach(el => {
-        document.getElementById(el.symbol+'_value').innerHTML = "<div class=\"col-sm-12\">R$ "+el.current_price.toLocaleString('pt-BR')+"</div>";
-        document.getElementById(el.symbol+'_image').setAttribute('src', el.image);
-      });
-    }).catch(function (err) {
-      console.error(err);
-    });
+  axios({url: "https://api.coingecko.com/api/v3/simple/price?ids=ethereum,bitcoin,ripple&vs_currencies=brl,usd&include_last_updated_at=true" })
+  .then(function (res) {
+    let dt, plus;
+    //BTC
+    dt = new Date(res.data.bitcoin.last_updated_at * 1000);
+    plus = "GMT"+((dt.getHours() >= dt.getUTCHours() )? "+": "-");
+    document.getElementById('btc_value').innerHTML = "<div class=\"col-sm-12\">R$ "+res.data.bitcoin.brl.toLocaleString('pt-BR')+" | "+
+      "$ "+res.data.bitcoin.usd.toLocaleString('pt-BR')+
+      "<br>"+dt.toLocaleString('pt-BR')+'&nbsp;'+plus+(dt.getTimezoneOffset() / 60)+"</div>";
+    //ETH
+    dt = new Date(res.data.ethereum.last_updated_at * 1000);
+    plus = "GMT"+((dt.getHours() >= dt.getUTCHours() )? "+": "-");
+    document.getElementById('eth_value').innerHTML = "<div class=\"col-sm-12\">R$ "+res.data.ethereum.brl.toLocaleString('pt-BR')+" | "+
+      "$ "+res.data.ethereum.usd.toLocaleString('pt-BR')+
+      "<br>"+dt.toLocaleString('pt-BR')+'&nbsp;'+plus+(dt.getTimezoneOffset() / 60)+"</div>";
+    //XRP
+    dt = new Date(res.data.ripple.last_updated_at * 1000);
+    plus = "GMT"+((dt.getHours() >= dt.getUTCHours() )? "+": "-");
+    document.getElementById('xrp_value').innerHTML = "<div class=\"col-sm-12\">R$ "+res.data.ripple.brl.toLocaleString('pt-BR')+" | "+
+      "$ "+res.data.ripple.usd.toLocaleString('pt-BR')+
+      "<br>"+dt.toLocaleString('pt-BR')+'&nbsp;'+plus+(dt.getTimezoneOffset() / 60)+"</div>";
+  }).catch(function (err) {
+    console.error(err);
+  });
 }
 setInterval(function () {
   main();
