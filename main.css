@@ -31,6 +31,16 @@
     display: none !important;
 }
 
+a:visited{
+  text-decoration: underline;
+  color: black;
+}
+
+a{
+  text-decoration: underline;
+  color: black;
+}
+
 /* cb */
 
 @font-face {
