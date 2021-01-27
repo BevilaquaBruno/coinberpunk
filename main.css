@@ -1,3 +1,13 @@
+@media only screen and (max-width: 700px){
+  img{
+    width: 75px;
+  }
+  .text-center > div{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .main-div{
     margin-top: 10px;
 }
@@ -20,12 +30,6 @@
 .no-x-padding{
     padding-left: 0 !important;
     padding-right: 0 !important;
-}
-
-.card-img{
-    width: 200px;
-    vertical-align: middle;
-    align-self: center;
 }
 .hidden{
     display: none !important;
