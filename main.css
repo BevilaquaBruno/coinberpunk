@@ -1,10 +1,15 @@
 @media only screen and (max-width: 700px){
   img{
-    width: 75px;
+    max-width: 250px;
   }
   .text-center > div{
     margin-left: auto;
     margin-right: auto;
+  }
+}
+@media only screen and (min-width: 701px){
+  img{
+    width: 250px;
   }
 }
 

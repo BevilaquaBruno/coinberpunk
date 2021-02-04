@@ -11,12 +11,12 @@
 </head>
 <body>
   <span id="title_here" class="hidden"></span>
-  <h2>Coinberpunk (Update every 15s)</h2>
+  <h2>Coinberpunk (Update every 15s | <span id="current_gmt"></span></span>)</h2>
   <h5>Powered by <a target="_blank" href="https://www.coingecko.com">CoinGecko API</a> </h5>
   <div class="row">
-    <div class="col-xs-12 col-sm-4 text-center">
+    <div class="col-xs-12 col-sm-3 text-center">
       <div>
-        <img id="btc_image" src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579" alt="loading...">
+        <img id="btc_image" src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579" alt="Bitcoin">
         <div>
           <h4>Bitcoin(BTC)</h4>
           <div id="btc_value" class="card-text row text-center">
@@ -25,9 +25,9 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-12 col-sm-4 text-center">
+    <div class="col-xs-12 col-sm-3 text-center">
       <div>
-        <img id="eth_image" src="https://assets.coingecko.com/coins/images/279/large/ethereum.png?1595348880" alt="Card example image">
+        <img id="eth_image" src="https://assets.coingecko.com/coins/images/279/large/ethereum.png?1595348880" alt="Ethereum">
         <div>
           <h4>Ethereum(ETH)</h4>
           <div id="eth_value" class="card-text row text-center">
@@ -36,12 +36,23 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-12 col-sm-4 text-center">
+    <div class="col-xs-12 col-sm-3 text-center">
       <div>
-        <img id="xrp_image" src="https://assets.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png?1605778731" alt="Card example image">
+        <img id="xrp_image" src="https://assets.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png?1605778731" alt="Ripple">
         <div>
           <h4>Ripple(XRP)</h4>
           <div id="xrp_value" class="card-text row text-center">
+            <div class="col-sm-10 no-margin no-padding">Retrieving data from Véio da Havan...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-3 text-center">
+      <div>
+        <img id="doge_image" src="https://dogecoin.com/imgs/dogecoin-300.png" alt="Dogecoin">
+        <div>
+          <h4>Dogecoin(DOGE)</h4>
+          <div id="doge_value" class="card-text row text-center">
             <div class="col-sm-10 no-margin no-padding">Retrieving data from Véio da Havan...</div>
           </div>
         </div>
