@@ -3,8 +3,8 @@ function openGithub() {
   window.open('https://www.github.com/bevilaquabruno/coinberpunk', '_blank');
 }
 
-function main() {
-  axios({url: "https://api.coingecko.com/api/v3/simple/price?ids=ethereum,bitcoin,ripple,dogecoin&vs_currencies=brl,usd&include_last_updated_at=true" })
+async function main() {
+  await axios({url: "https://api.coingecko.com/api/v3/simple/price?ids=ethereum,bitcoin,ripple,dogecoin&vs_currencies=brl,usd&include_last_updated_at=true" })
   .then(function (res) {
     let dt, lang = (navigator.language != '' && navigator.language != null)?navigator.language:'pt-BR';
     //BTC
