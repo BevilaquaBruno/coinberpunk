@@ -1,0 +1,59 @@
+.side-menu-wrapper { /* style menu wrapper */
+	background: rgba(0,0,0,0);
+	padding: 40px 0 0 40px;
+	position: fixed; /* Fixed position */
+	top: 0;
+	right: 0; /* Sidebar initial position. "right" for right positioned menu */
+	height: 100%;
+	z-index: 2;
+	transition: 0.5s; /* CSS transition speed */
+	width: 250px;
+	font: 20px 'Cyber', sans-serif;
+	box-sizing: border-box;
+}
+ul{ /* css ul list style */
+	list-style:none;
+	padding:0;
+	margin:0;
+  overflow-y: auto; /* enable scroll for menu items */
+	height:95%;
+}
+ul > li > a { /* links */
+  display: block;
+  border-bottom: 1px solid #131313;
+  padding: 6px 4px 6px 4px;
+  color: black;
+  transition: 0.3s;
+	text-decoration: none;
+}
+.side-menu-wrapper > a.menu-close { /* close button */
+  padding: 8px 0 4px 23px;
+  color: black;
+  display: block;
+  margin: -30px 0 -10px -20px;
+  font-size: 35px;
+  text-decoration: none;
+}
+
+.menu-overlay { /* overlay */
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,.7);
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.side-menu-child{
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+  background: #f887ff;
+  --aug-l-extend1: 25% !important;
+}
