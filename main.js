@@ -1,6 +1,6 @@
 "use strict";
-function openGithub() {
-  window.open('https://www.github.com/bevilaquabruno/coinberpunk', '_blank');
+function openUrl(url) {
+  window.open(url, '_blank');
 }
 
 async function main() {
