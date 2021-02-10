@@ -18,13 +18,29 @@ ul{ /* css ul list style */
   overflow-y: auto; /* enable scroll for menu items */
 	height:95%;
 }
-ul > li > a { /* links */
+ul > li > div { /* links */
   display: block;
   border-bottom: 1px solid #131313;
   padding: 6px 4px 6px 4px;
   color: black;
   transition: 0.3s;
 	text-decoration: none;
+}
+ul > li{
+  padding-left: 5px;
+}
+ul > li:first-child{
+  font-size: 10pt;
+}
+ul > li:not(:first-child){
+  font-size: 14pt;
+  cursor: pointer;
+}
+ul > li:not(:first-child):hover > div{
+  font-size: 18pt;
+}
+ul > li:not(:first-child):hover > div > img{
+  transform: scale(1.3);
 }
 .side-menu-wrapper > a.menu-close { /* close button */
   padding: 8px 0 4px 23px;
@@ -53,7 +69,12 @@ ul > li > a { /* links */
   z-index: 100;
   width: 100%;
   height: 100%;
-  padding: 25px;
+  padding: 20px;
   background: #f887ff;
   --aug-l-extend1: 25% !important;
+}
+.img-menu{
+  width: 25px;
+  vertical-align: middle;
+  transition: all .2s ease-in-out;
 }

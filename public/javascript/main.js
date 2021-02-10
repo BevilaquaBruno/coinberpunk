@@ -4,13 +4,13 @@ function openUrl(url) {
 }
 
 async function main() {
-  await axios({url: "https://api.coingecko.com/api/v3/simple/price?ids=ethereum,bitcoin,ripple,dogecoin&vs_currencies=brl,usd&include_last_updated_at=true" })
+  await axios({url: "https://api.coingecko.com/api/v3/simple/price?ids=ethereum,bitcoin,ripple,dogecoin,cardano&vs_currencies=brl,usd&include_last_updated_at=true" })
   .then(function (res) {
     let dt, lang = (navigator.language != '' && navigator.language != null)?navigator.language:'pt-BR';
     //BTC
     document.getElementById('title_here').innerText = res.data.bitcoin.brl.toLocaleString(lang)+';'+
       res.data.ethereum.brl.toLocaleString(lang)+';'+
-      res.data.ripple.brl.toLocaleString(lang)+';'+
+      res.data.cardano.brl.toLocaleString(lang)+';'+
       res.data.dogecoin.brl.toLocaleString(lang);
     dt = new Date(res.data.bitcoin.last_updated_at * 1000);
     document.getElementById('btc_value').innerHTML = "<div class=\"col-sm-12\">R$ "+res.data.bitcoin.brl.toLocaleString(lang)+" | "+
@@ -22,9 +22,14 @@ async function main() {
       "$ "+res.data.ethereum.usd.toLocaleString(lang)+
       "<br>"+dt.toLocaleString(lang)+"</div>";
     //XRP
-    dt = new Date(res.data.ripple.last_updated_at * 1000);
+    /*dt = new Date(res.data.ripple.last_updated_at * 1000);
     document.getElementById('xrp_value').innerHTML = "<div class=\"col-sm-12\">R$ "+res.data.ripple.brl.toLocaleString(lang)+" | "+
       "$ "+res.data.ripple.usd.toLocaleString(lang)+
+      "<br>"+dt.toLocaleString(lang)+"</div>";*/
+    //ADA
+    dt = new Date(res.data.cardano.last_updated_at * 1000);
+    document.getElementById('ada_value').innerHTML = "<div class=\"col-sm-12\">R$ "+res.data.cardano.brl.toLocaleString(lang)+" | "+
+      "$ "+res.data.cardano.usd.toLocaleString(lang)+
       "<br>"+dt.toLocaleString(lang)+"</div>";
     //DOGE
     dt = new Date(res.data.dogecoin.last_updated_at * 1000);
@@ -32,6 +37,7 @@ async function main() {
       "$ "+res.data.dogecoin.usd.toLocaleString(lang)+
       "<br>"+dt.toLocaleString(lang)+"</div>";
     let plus = "GMT"+((dt.getHours() >= dt.getUTCHours() )? "+": "-");
+
     document.getElementById('current_gmt').innerText = plus+(dt.getTimezoneOffset() / 60)
   }).catch(function (err) {
     console.error(err);
@@ -45,9 +51,12 @@ async function changeTitle() {
         document.title = 'ETH: R$ '+document.getElementById('title_here').innerText.split(';')[1];
         break;
       case 'ETH':
-        document.title = 'XRP: R$ '+document.getElementById('title_here').innerText.split(';')[2];
+        document.title = 'ADA: R$ '+document.getElementById('title_here').innerText.split(';')[2];
         break;
-      case 'XRP':
+      /*case 'XRP':
+        document.title = 'DOGE: R$ '+document.getElementById('title_here').innerText.split(';')[3];
+        break;*/
+      case 'ADA':
         document.title = 'DOGE: R$ '+document.getElementById('title_here').innerText.split(';')[3];
         break;
       case 'DOGE':
